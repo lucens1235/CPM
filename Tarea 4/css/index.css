@@ -1,0 +1,61 @@
+/* ========================= */
+/* Fondo especial en main */
+/* ========================= */
+
+/* ReqS5 */
+main {
+    background: linear-gradient(to bottom, #ffffff, #eef7ff);
+}
+
+/* ========================= */
+/* Primera letra o línea */
+/* ========================= */
+
+/* ReqS7 */
+p::first-letter {
+    font-size: 2rem;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+/* ========================= */
+/* Sobrescribir estilo por ID */
+/* ========================= */
+
+/* ReqS9 */
+#destacado {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffcc00;
+}
+
+/* ========================= */
+/* Navegación tipo botones */
+/* ========================= */
+
+/* ReqS13 */
+nav ul li a {
+    display: inline-block;
+    background-color: #e6e6e6;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+/* ========================= */
+/* Página activa */
+/* ========================= */
+
+/* ReqS15 */
+nav ul li a.active {
+    background-color: #0077cc;
+    color: white;
+    font-weight: bold;
+}
+
+/* ========================= */
+/* Posicionamiento bloques */
+/* ========================= */
+
+/* ReqS22 */
+header, nav, main {
+    position: relative;
+}

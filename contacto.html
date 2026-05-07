@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--ReqH1-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <!--ReqH2-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <meta name="author" content="Tu nombre">
+  <meta name="description" content="Contacto fútbol">
+  <meta name="keywords" content="contacto">
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- ReqJ1: JS externo con defer -->
+  <script src="js/myJS.js" defer></script>
+  <script src="js/i18n/translations.js" defer></script>
+  <script src="js/i18n/i18n.js" defer></script>
+  <script src="js/buscador.js"></script>
+
+</head>
+
+<body>
+
+<header>
+  <h1 data-i18n="site.title">Contacto</h1>
+  
+  <!-- ReqI18N6 -->
+  <select onchange="changeLanguage(this.value)">
+    <option value="es" data-i18n="language.spanish">Español</option>
+    <option value="en" data-i18n="language.english">English</option>
+  </select>
+
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html" data-i18n="navigation.home">Inicio</a></li>
+    <li><a href="equipos.html" data-i18n="navigation.teams">Equipos</a></li>
+    <li><a href="contacto.html" data-i18n="navigation.contact">Contacto</a></li>
+  </ul>
+
+  <form id="buscador" role="search">
+        <input type="text" id="search" placeholder="Buscar en el sitio...">
+    </form>
+</nav>
+
+<main>
+<section>
+  <h2 data-i18n="contact.heading">Formulario de aficionados</h2>
+
+  <!-- ReqJ4 -->
+  <form id="mainForm" onsubmit="return validateForm()">
+
+    <p>
+      <label data-i18n="contact.name" for="nombre">Nombre:</label><br>
+      <!-- ReqJ3 -->
+      <input type="text" placeholder="" data-i18n-placeholder="contact.name" id="nombre" name="nombre" required
+             oninput="updatePreview(); checkValidityState(this)"
+             onkeydown="handleKey(event, this)"
+             onmouseover="handleMouseOver(this)"
+             onmouseout="handleMouseOut(this)">
+    </p>
+
+    <p>
+      <label data-i18n="contact.email" for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required
+             oninput="updatePreview(); checkValidityState(this)"
+             onkeydown="handleKey(event, this)"
+             onmouseover="handleMouseOver(this)"
+             onmouseout="handleMouseOut(this)">
+    </p>
+
+    <p>
+      <label data-i18n="contact.password" for="pass">Contraseña:</label><br>
+      <input type="password" id="pass" name="pass"
+             oninput="checkValidityState(this)"
+             onkeydown="handleKey(event, this)"
+             onmouseover="handleMouseOver(this)"
+             onmouseout="handleMouseOut(this)">
+    </p>
+
+    <p>
+      <label data-i18n="contact.phone" for="tel">Teléfono:</label><br>
+      <!-- ReqJ3 -->
+      <input type="tel" id="tel" name="tel"
+             pattern="[0-9]{9}" required
+             oninput="updatePreview(); checkValidityState(this)"
+             onkeydown="handleKey(event, this)"
+             onmouseover="handleMouseOver(this)"
+             onmouseout="handleMouseOut(this)">
+    </p>
+
+    <p>
+      <label data-i18n="contact.team" for="mensaje">Equipo favorito:</label><br>
+      <textarea id="mensaje" name="mensaje" required
+                oninput="updatePreview(); checkValidityState(this)"
+                onkeydown="handleKey(event, this)"
+                onmouseover="handleMouseOver(this)"
+                onmouseout="handleMouseOut(this)"></textarea>
+    </p>
+
+    <!-- ReqJ5 -->
+    <div id="errorBox" style="display:none;"></div>
+
+    <p>
+      <button type="submit" data-i18n="contact.submit">Enviar</button>
+      <!-- Reset adaptado -->
+      <button type="reset" data-i18n="contact.reset"
+      onclick="resetPreview()">Reset</button>
+    </p>
+
+  </form>
+
+  <!-- ReqJ2: Vista previa-->
+  <div id="previewBox"></div>
+
+  
+  <!-- ReqI18N7 + ReqI18N8 -->
+  <p>
+    <span data-date="2026-05-01"></span>
+    <span data-price="25"></span>
+  </p>
+
+  <div id="dynamicContent"></div>
+
+</section>
+</main>
+
+<footer>
+  <h3 data-i18n="contact.footer">Contacto fútbol</p>
+</footer>
+
+</body>
+</html>

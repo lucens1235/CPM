@@ -1,0 +1,226 @@
+/* ========================= */
+/* Tipografía global */
+/* ========================= */
+
+/* ReqC1: familia tipográfica */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* ReqC2: tamaños relativos */
+p, li, td, th, input, textarea, button {
+    font-size: 1rem;
+}
+
+/* ReqC3: jerarquía de encabezados */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+
+/* ========================= */
+/* Contenedor principal */
+/* ========================= */
+
+/* ReqC4: main centrado y 80vw */
+main {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+/* ========================= */
+/* Diferenciación de bloques */
+/* ========================= */
+
+/* ReqC6: espaciado y fondos sutiles */
+header, nav, footer, section, article {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+}
+
+/* ========================= */
+/* Clases reutilizables */
+/* ========================= */
+
+/* ReqC8: clases reutilizables */
+.btn {
+    background-color: #0077cc;
+    color: white;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.box {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* ========================= */
+/* Estilo por ID */
+/* ========================= */
+
+/* ReqC9: estilo por ID */
+#destacado {
+    background-color: #e0f0ff;
+    padding: 1rem;
+    border-left: 4px solid #0077cc;
+}
+
+/* ========================= */
+/* Selectores */
+/* ========================= */
+
+/* ReqC10: selector hijo > */
+nav > ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* ReqC11: selector descendiente */
+nav ul li a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+/* ReqC12: selector hermano (+ o ~) */
+h2 + p {
+    font-weight: bold;
+}
+
+/* ========================= */
+/* Navegación */
+/* ========================= */
+
+/* ReqC14: hover/focus en navegación */
+nav ul li a:hover,
+nav ul li a:focus {
+    color: white;
+    background-color: #0077cc;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* ========================= */
+/* Listas */
+/* ========================= */
+
+/* ReqC16: cambiar list-style */
+ul li ul {
+    list-style-type: square;
+}
+
+/* ========================= */
+/* Tablas */
+/* ========================= */
+
+/* ReqC17: estilo caption */
+caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* ReqC18: th vs td */
+th {
+    background-color: #0077cc;
+    color: white;
+    padding: 0.5rem;
+}
+
+td {
+    padding: 0.5rem;
+    background-color: #fafafa;
+}
+
+/* ========================= */
+/* Formularios */
+/* ========================= */
+
+/* ReqC19: estilo de controles */
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+input:required {
+    border-left: 4px solid red;
+}
+
+/* ReqC20: botones */
+button, .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+}
+
+/* ========================= */
+/* Adaptabilidad */
+/* ========================= */
+
+/* ReqC21: media query */
+@media (max-width: 600px) {
+    main {
+        width: 95vw;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* ========================= */
+/* Enfatizar bloques */
+/* ========================= */
+
+/* ReqC23 */
+section {
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* ========================= */
+/* Espaciado consistente */
+/* ========================= */
+
+/* ReqC24 */
+:root {
+    --espacio: 1rem;
+}
+
+section, article, header, footer {
+    margin-bottom: var(--espacio);
+    padding: var(--espacio);
+}
+
+/* ========================= */
+/* Internacionalización (i18n) */
+/* ========================= */
+
+/* ReqI18N9: CSS dependiente del idioma */
+
+/* Español */
+:lang(es) h1 {
+    color: #8b0000;
+}
+
+:lang(es) button {
+    font-weight: bold;
+}
+
+/* Inglés */
+:lang(en) h1 {
+    color: #003366;
+}
+
+:lang(en) button {
+    text-transform: uppercase;
+}
